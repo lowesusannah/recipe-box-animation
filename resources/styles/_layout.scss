@@ -1,0 +1,46 @@
+body {
+  background-color: $bg-color;
+}
+
+.jumbotron, .well {
+  background-color: $secondary-bg-color;
+  h1, h2 {
+    text-align: center;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $header-font;
+}
+
+#recipe-box {
+  margin-top: 500px;
+  display: flex;
+  width: $box-width;
+  img:nth-child(1) {
+    width: $box-width;
+    position: absolute;
+    z-index: 2;
+  }
+  img:nth-child(2) {
+    width: $box-width;
+    position: absolute;
+    z-index: -1;
+  }
+  .cards {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    transition: transform 100ms linear 0s;
+    .card {
+      box-shadow: 0px 2px 2px black;
+      width: 850px;
+    }
+  }
+  &:hover {
+    .cards {
+      transform: translate(0px, -300px);
+    }
+  }
+}
