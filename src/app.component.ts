@@ -8,17 +8,23 @@ import {Component} from '@angular/core';
       <h1>Recipe Box</h1>
     </div>
     <div id="recipe-box">
-      <img src="./resources/img/box-front.png">
+      <img src="./resources/img/box-front.png" usemap="#box-buttons" (click)="hoverIt()">
       <img src="./resources/img/box-back.png">
-      <div class="cards">
-        <div *ngFor="let recipe of recipeBox" class="card well">
-          <h2>{{recipe.name}}</h2>
-          <h3>Ingredients</h3>
-          <ul>
-            <li *ngFor="let ingredient of recipe.ingredients">{{ingredient}}</li>
-          </ul>
-          <h3>Directions</h3>
-          <p>{{recipe.directions}}</p>
+      <map name="box-buttons">
+        <area shape="rect" coords="134,348,399,876" (click)="prevRecipe()">
+        <area shape="rect" coords="471,405,522,595" (click)="nextRecipe()">
+      </map>
+      <div class="cards" [id]="hovered">
+        <div *ngFor="let recipe of recipeBox">
+          <div (click)="hoverIt()" *ngIf="recipe.id === currentRecipe" [class]='"card well " + getCardClass(recipe.id)'>
+            <h2>{{recipe.name}}</h2>
+            <h3>Ingredients</h3>
+            <ul>
+              <li *ngFor="let ingredient of recipe.ingredients">{{ingredient}}</li>
+            </ul>
+            <h3>Directions</h3>
+            <p>{{recipe.directions}}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -28,6 +34,8 @@ import {Component} from '@angular/core';
 
 export class AppComponent {
   // Component logic
+  currentRecipe = 1;
+  hovered: string = "";
   firstRecipe: Recipe = new Recipe(
     "Pumpkin Bread",
     ["2 cups all-purpose flour, spooned into measuring cup and leveled-off",
@@ -46,7 +54,8 @@ export class AppComponent {
     In a large bowl of an electric mixer, beat the butter and sugar on medium speed until just blended. Add the eggs one at a time, beating well after each addition. Continue beating until very light and fluffy, a few minutes. Beat in the pumpkin. The mixture might look grainy and curdled at this point -- that's okay.
     Add the flour and mix on low speed until combined.
     Turn the batter into the prepared pans, dividing evenly, and bake for 65 – 75 minutes, or until a cake tester inserted into the center comes out clean. Let the loaves cool in the pans for about 10 minutes, then turn out onto a wire rack to cool completely.
-    Fresh out of the oven,the loaves have a deliciously crisp crust. If they last beyond a day, you can toast individual slices to get the same fresh-baked effect.`);
+    Fresh out of the oven,the loaves have a deliciously crisp crust. If they last beyond a day, you can toast individual slices to get the same fresh-baked effect.`,
+    0);
 
     secondRecipe: Recipe = new Recipe(
       "Pancakes",
@@ -58,11 +67,37 @@ export class AppComponent {
       "1 egg",
       "3 tablespoons butter, melted"],
       `In a large bowl, sift together the flour, baking powder, salt and sugar. Make a well in the center and pour in the milk, egg and melted butter; mix until smooth.
-      Heat a lightly oiled griddle or frying pan over medium high heat. Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake. Brown on both sides and serve hot.`);
+      Heat a lightly oiled griddle or frying pan over medium high heat. Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake. Brown on both sides and serve hot.`,
+      1);
 
     recipeBox: Recipe[] = [this.firstRecipe, this.secondRecipe];
+
+    prevRecipe() {
+      this.currentRecipe--;
+      if (this.currentRecipe < 0) {
+        this.currentRecipe = this.recipeBox.length - 1;
+      }
+    }
+
+    nextRecipe() {
+      this.currentRecipe++;
+      this.currentRecipe %= this.recipeBox.length;
+    }
+
+    hoverIt() {
+      if(this.hovered) {
+        this.hovered = "";
+      }
+      else {
+        this.hovered = "transform";
+      }
+    }
+
+    getCardClass(id: number) {
+      return "card-" + id;
+    }
 }
 
 export class Recipe {
-  constructor(public name: string, public ingredients: string[], public directions: string) {}
+  constructor(public name: string, public ingredients: string[], public directions: string, public id: number) {}
 }

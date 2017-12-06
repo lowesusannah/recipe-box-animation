@@ -1,0 +1,46 @@
+//Shiny code courtesy of: https://codepen.io/aundrekerr/pen/GtLul?q=shine&limit=all&type=type-pens
+
+// @mixin fade-transition($element) {
+// 	-webkit-transition: $element 0.15s ease-in-out;
+// 	-moz-transition: $element 0.15s ease-in-out;
+// 	-ms-transition: $element 0.15s ease-in-out;
+// 	-o-transition: $element 0.15s ease-in-out;
+// 	transition: $element 0.15s ease-in-out;
+// }
+//
+// @keyframes move {
+// 	0%  { left: 0; opacity: 0; }
+// 	5% {opacity: 0.0}
+// 	48% {opacity: 0.2}
+// 	80% {opacity: 0.0}
+// 	100% { left: 82%}
+// }
+//
+// /*  animating it  */
+//      animation: move 2s;
+// 		animation-iteration-count: infinite;
+// 		animation-delay: 1s;
+// 		-webkit-animation: move 2s;
+// 		-webkit-animation-iteration-count:
+//
+// /*   gradient   */
+// 		background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.03) 1%, rgba(255,255,255,0.6) 30%, rgba(255,255,255,0.85) 50%, rgba(255,255,255,0.85) 70%, rgba(255,255,255,0.85) 71%, rgba(255,255,255,0) 100%);
+//
+//     i {
+// /*   positioning */
+// 		position: absolute;
+// 		opacity: 0;
+// 		top: 0;
+// 		left: 0;
+//
+//
+//     /*  forming the shine element
+//         play around with the width, skew and gradient to get different effects
+//       */
+//     		width: 15%;
+//     		height: 100%;
+//          transform: skew(-10deg,0deg);
+//     		-webkit-transform: skew(-10deg,0deg);
+//          -moz-transform: skew(-10deg,0deg);
+//          -ms-transform: skew(-10deg,0deg);
+//          -o-transform: skew(-10deg,0deg);
