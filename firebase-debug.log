@@ -1,0 +1,32 @@
+[debug] [2018-05-27T19:42:32.131Z] ----------------------------------------------------------------------
+[debug] [2018-05-27T19:42:32.133Z] Command:       /Users/susannahlowe/.nvm/versions/node/v8.11.1/bin/node /Users/susannahlowe/.nvm/versions/node/v8.11.1/bin/firebase serve
+[debug] [2018-05-27T19:42:32.133Z] CLI Version:   3.18.4
+[debug] [2018-05-27T19:42:32.134Z] Platform:      darwin
+[debug] [2018-05-27T19:42:32.134Z] Node Version:  v8.11.1
+[debug] [2018-05-27T19:42:32.136Z] Time:          Sun May 27 2018 12:42:32 GMT-0700 (PDT)
+[debug] [2018-05-27T19:42:32.136Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-05-27T19:42:32.149Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-05-27T19:42:32.149Z] > authorizing via signed-in user
+[debug] [2018-05-27T19:42:32.151Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/recipe-box-34c45  
+  
+ Sun May 27 2018 12:42:32 GMT-0700 (PDT)
+[debug] [2018-05-27T19:42:32.663Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-27T19:42:32.665Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/recipe-box-34c45/tokens  
+  
+ Sun May 27 2018 12:42:32 GMT-0700 (PDT)
+[debug] [2018-05-27T19:42:33.093Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-27T19:42:33.095Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/recipe-box-34c45  
+  
+ Sun May 27 2018 12:42:33 GMT-0700 (PDT)
+[debug] [2018-05-27T19:42:33.426Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/susannahlowe/Desktop/recipe-box-animation'...
+[info] 
+[debug] [2018-05-27T19:42:33.430Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/363714513305/clients/_:getWebAppConfig  
+  
+ Sun May 27 2018 12:42:33 GMT-0700 (PDT)
+[debug] [2018-05-27T19:42:33.799Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: app/src
+[info] ✔  hosting: Local server: http://localhost:5000
+
